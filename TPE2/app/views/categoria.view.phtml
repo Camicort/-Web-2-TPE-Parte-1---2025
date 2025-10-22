@@ -1,0 +1,26 @@
+?php require './templates/header.phtml'; ?>
+
+<section>
+   <!-- contenido dinámico -->
+</section>
+
+<?php require './templates/footer.phtml'; ?>
+<section>
+    <h2>Categorías</h2>
+
+    <?php if (empty($categorias)): ?>
+        <p>No hay categorías cargadas.</p>
+    <?php else: ?>
+        <ul>
+            <?php foreach ($categorias as $categoria): ?>
+                <li>
+                    <a href="categoria/<?= $categoria->id_categoria ?>">
+                        <?= htmlspecialchars($categoria->nombre) ?>
+                    </a>
+                </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php endif; ?>
+</section>
+
+<?php require './app/views/templates/footer.phtml'; ?>
